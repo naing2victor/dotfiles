@@ -1,0 +1,30 @@
+[submodule "vim/.vim/bundle/dracula"]
+	path = vim/.vim/bundle/dracula
+	url = git@github.com:dracula/vim.git
+[submodule "vim/.vim/bundle/vim-airline"]
+	path = vim/.vim/bundle/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "vim/.vim/bundle/vim-airline-themes"]
+	path = vim/.vim/bundle/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = git@github.com:preservim/nerdtree.git
+[submodule "vim/.vim/bundle/ctrlp"]
+	path = vim/.vim/bundle/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
+[submodule "vim/.vim/bundle/fzf"]
+	path = vim/.vim/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "vim/.vim/bundle/gruvbox"]
+	path = vim/.vim/bundle/gruvbox
+	url = git@github.com:morhetz/gruvbox.git
+[submodule "vim/.vim/bundle/vim-fugitive"]
+	path = vim/.vim/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim/.vim/bundle/vim-easymotion"]
+	path = vim/.vim/bundle/vim-easymotion
+	url = git@github.com:easymotion/vim-easymotion.git
+[submodule "vim/.vim/bundle/vim-polyglot"]
+	path = vim/.vim/bundle/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
