@@ -1,0 +1,30 @@
+# update upgrade aliases
+alias udug='sudo apt-get update && sudo apt-get upgrade -y'
+alias ud='sudo apt-get update'
+
+# ls aliases
+alias lsd='ls -lF | grep ^d'
+alias ll='ls -lAF'
+alias la='ls -A'
+alias l='ls -CF'
+alias sl=ls
+
+# cd aliases
+alias ..='cd ../'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# editor
+alias vim='nvim'
+alias vi='nvim'
+
+# enable color for grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# kubectl alias
+alias k='kubectl'
+
+# git alias
+alias g='git'
