@@ -10,11 +10,11 @@ syntax enable
 " use spaces instead of tabs
 set expandtab smarttab
 
-" 1 tab == 4 spaces
-set tabstop=4 softtabstop=4 shiftwidth=4
+" 1 tab == 2 spaces
+set tabstop=2 softtabstop=2 shiftwidth=2
 
 " exclude version control directories
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*/.git/*
 
 " auto indentation 
 set smartindent autoindent
@@ -101,25 +101,6 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
   
 " NERDTree mapping
 map <C-n> :NERDTreeToggle<CR>
-
-" vim-easymotion plugin
-" Disable default mappings
-let g:EasyMotion_do_mapping = 0 
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case-insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
 
 " open terminal inside vim
 map <Leader>tt :vnew term://bash<CR>
