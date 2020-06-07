@@ -16,7 +16,7 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 " exclude version control directories
 set wildignore+=*/.git/*
 
-" auto indentation 
+" auto indentation
 set smartindent autoindent
 
 " increment case ignore search
@@ -39,8 +39,9 @@ set termguicolors background=dark cursorline
 colorscheme gruvbox
 
 " :W sudo saves the file
+" (works in vim but not in neovim)
 " (useful for handling the permission-denied error)
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+command G :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -55,6 +56,11 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
+" Strip all trailing whitespace
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
+" Highlight all trailing whitespace
+nnoremap <F8> :let _s=@/<Bar>:%s/;\s\+$/;/e<Bar>:let @/=_s<Bar><CR>
 " assign mapleader
 let mapleader = ' '
 
@@ -81,10 +87,11 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " airline plugin
-let g:airline_theme = 'dracula' 
+let g:airline_theme = 'dracula'
 
 " gruvbox plugin
 let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark = 'hard'
 
 " gruvbox mapping
 nnoremap <silent> thl :call gruvbox#hls_toggle()<CR>
@@ -98,7 +105,7 @@ let g:ctrlp_open_multiple_files = 'v'
 " ctrlp mapping
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-  
+
 " NERDTree mapping
 map <C-n> :NERDTreeToggle<CR>
 
@@ -114,18 +121,18 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
 function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+  let l:saved_reg = @"
+  execute "normal! vgvy"
 
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+  let l:pattern = escape(@", "\\/.*'$^~[]")
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
+  if a:direction == 'gv'
+      call CmdLine("Ack '" . l:pattern . "' " )
+  elseif a:direction == 'replace'
+      call CmdLine("%s" . '/'. l:pattern . '/')
+  endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
+  let @/ = l:pattern
+  let @" = l:saved_reg
 endfunction
