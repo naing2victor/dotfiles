@@ -103,3 +103,19 @@ source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # Enable tab completion for `k` by marking it as an alias for `git`
 complete -F __start_kubectl k
+
+#####################################################################
+
+# https://www.debian.org/doc/manuals/debmake-doc
+# Debian maintainer setup
+DEBEMAIL="naing2victor@gmail.com"
+DEBFULLNAME="Naing Naing Htun"
+export DEBEMAIL DEBFULLNAME
+
+# Quilt
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+complete -F _quilt_completion $_quilt_complete_opt dquilt
+
+DEBUILD_DPKG_BUILDPACKAGE_OPTS="-i -I -us -uc"
+DEBUILD_LINTIAN_OPTS="-i -I --show-overrides"
+DEBSIGN_KEYID="C0772350403BD5BE"
