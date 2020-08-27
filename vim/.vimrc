@@ -36,7 +36,7 @@ set splitbelow splitright
 
 " theme option
 set termguicolors background=dark cursorline
-colorscheme gruvbox
+colorscheme default
 
 " :W sudo saves the file
 " (works in vim but not in neovim)
