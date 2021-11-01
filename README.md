@@ -1,6 +1,16 @@
 
 ---
 
+# Prerequisites
+
+Install `stow` and `neovim`
+
+    sudo apt-get update && sudo apt-get install stow neovim -y
+
+Remove dotfiles from home directory
+
+    rm -rf .aliases .bashrc .config .profile .vim .vimrc autoload
+
 # Clone into new machine
 
 Clone including submodules

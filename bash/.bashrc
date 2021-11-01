@@ -102,6 +102,7 @@ esac
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # Enable tab completion for `k` by marking it as an alias for `git`
+source <(kubectl completion bash)
 complete -F __start_kubectl k
 
 #####################################################################

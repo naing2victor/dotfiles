@@ -51,10 +51,10 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 autocmd VimResized * :wincmd =
 
 " Make adjusing split sizes a bit more friendly
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize +3<CR>
-noremap <silent> <C-Down> :resize -3<CR>
+"noremap <silent> <C-Left> :vertical resize +3<CR>
+"noremap <silent> <C-Right> :vertical resize -3<CR>
+"noremap <silent> <C-Up> :resize +3<CR>
+"noremap <silent> <C-Down> :resize -3<CR>
 
 " Strip all trailing whitespace
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
@@ -65,22 +65,22 @@ nnoremap <F8> :let _s=@/<Bar>:%s/;\s\+$/;/e<Bar>:let @/=_s<Bar><CR>
 let mapleader = ' '
 
 " split navigation with Ctrl + hjkl
-map <C-h> <C-W>h
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-l> <C-W>l
-tnoremap <C-h> <c-\><c-n><c-w>h
-tnoremap <C-j> <c-\><c-n><c-w>j
-tnoremap <C-k> <c-\><c-n><c-w>k
-tnoremap <C-l> <c-\><c-n><c-w>l
-inoremap <C-h> <Esc><c-w>h
-inoremap <C-j> <Esc><c-w>j
-inoremap <C-k> <Esc><c-w>k
-inoremap <C-l> <Esc><c-w>l
-vnoremap <C-h> <Esc><c-w>h
-vnoremap <C-j> <Esc><c-w>j
-vnoremap <C-k> <Esc><c-w>k
-vnoremap <C-l> <Esc><c-w>l
+map <A-h> <C-W>h
+map <A-j> <C-W>j
+map <A-k> <C-W>k
+map <A-l> <C-W>l
+tnoremap <A-h> <c-\><c-n><c-w>h
+tnoremap <A-j> <c-\><c-n><c-w>j
+tnoremap <A-k> <c-\><c-n><c-w>k
+tnoremap <A-l> <c-\><c-n><c-w>l
+inoremap <A-h> <Esc><c-w>h
+inoremap <A-j> <Esc><c-w>j
+inoremap <A-k> <Esc><c-w>k
+inoremap <A-l> <Esc><c-w>l
+vnoremap <A-h> <Esc><c-w>h
+vnoremap <A-j> <Esc><c-w>j
+vnoremap <A-k> <Esc><c-w>k
+vnoremap <A-l> <Esc><c-w>l
 
 " Change 2 split windows from vert to horiz or horiz to vert
 map <Leader>th <C-w>t<C-w>H
